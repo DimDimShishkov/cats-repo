@@ -1,0 +1,24 @@
+$font-main: "Roboto", "Helvetica", "Arial", sans-serif;
+$white: #ffff;
+$black: #000000;
+$gray: #343434;
+$green: #3ddc84;
+$blue: #0584fe;
+$red: #ee3465;
+$dark: #313131;
+
+:root {
+  --bgc-primary: #ebebeb;
+  --background-color-secondary: #fafafa;
+  --accent-color: #cacaca;
+  --text-primary-color: #222;
+  --element-size: 4rem;
+}
+
+/* Define styles for the root window with dark - mode preference */
+:root.dark-theme {
+  --bgc-primary: #1e1e1e;
+  --background-color-secondary: #2d2d30;
+  --accent-color: #3f3f3f;
+  --text-primary-color: #ddd;
+}

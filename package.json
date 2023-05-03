@@ -1,5 +1,5 @@
 {
-  "name": "typescript-app",
+  "name": "logistics",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,6 +11,8 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "register-service-worker": "^1.7.2",
+    "sass-resources-loader": "^2.2.5",
+    "style-resources-loader": "^1.5.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -34,7 +36,10 @@
     "eslint-plugin-vue": "^8.0.3",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
-    "typescript": "~4.5.5"
+    "sass": "^1.62.1",
+    "sass-loader": "^13.2.2",
+    "typescript": "~4.5.5",
+    "webpack": "^5.82.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
