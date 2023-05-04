@@ -9,3 +9,51 @@
     padding: 80px 10px 50px;
   }
 }
+
+@mixin sub-text {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  margin: 0;
+}
+
+@mixin text {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  @media screen and (max-width: 700px) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
+
+@mixin help-text {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  margin: 0;
+}
+
+@mixin main-text {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  margin: 0;
+  @media screen and (max-width: 1000px) {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}

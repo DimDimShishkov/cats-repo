@@ -1,12 +1,19 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <header>
+    <router-link to="/"
+      ><img alt="test" src="@/assets/pngegg.png" class="header__img"
+    /></router-link>
+
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+      <router-link to="/about">Регистрация</router-link>
+    </nav>
+  </header>
   <router-view />
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -15,8 +22,22 @@
   color: #2c3e50;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid $black;
+}
+
+.header__img {
+  width: 30px;
+  height: 30px;
+}
+
 nav {
-  padding: 30px;
+  /* padding: 30px; */
 }
 
 nav a {
