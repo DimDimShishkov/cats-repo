@@ -1,13 +1,13 @@
 <template>
   <header>
     <router-link to="/"
-      ><img alt="test" src="@/assets/pngegg.png" class="header__img"
+      ><img alt="test" src="@/assets/header__logo.png" class="header__img"
     /></router-link>
 
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/about">Регистрация</router-link>
+      <router-link to="/crew">Crew</router-link> |
+      <router-link to="/reg">Registration</router-link>
     </nav>
   </header>
   <router-view />
@@ -32,7 +32,7 @@ header {
 }
 
 .header__img {
-  width: 30px;
+  width: 20px;
   height: 30px;
 }
 
