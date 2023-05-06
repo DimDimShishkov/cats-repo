@@ -18,7 +18,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
@@ -33,7 +32,7 @@ header {
 
 .header__img {
   width: 20px;
-  height: 30px;
+  height: 31px;
 }
 
 nav {

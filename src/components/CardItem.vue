@@ -5,11 +5,18 @@
       v-bind:alt="name || 'Sorry, but image is lost'"
       class="item__img"
     />
-    <div class="item__desc">
-      <p class="item__title">{{ name }}</p>
+    <p class="item__title">{{ name }}</p>
+    <div class="item__info">
+      <span
+        class="item__status"
+        :style="{
+          backgroundColor:
+            status === 'Dead' ? 'red' : status === 'unknown' ? 'gray' : 'green',
+        }"
+      />
+      <p class="item__subtitle">{{ status }} / {{ race }}</p>
       <button class="item__like"></button>
     </div>
-    <p class="item__subtitle">{{ numb }}</p>
   </div>
 </template>
 
@@ -21,7 +28,8 @@ export default defineComponent({
   props: {
     link: String,
     name: String,
-    numb: String,
+    status: String,
+    race: String,
   },
 });
 </script>
@@ -36,21 +44,44 @@ export default defineComponent({
   padding: 0 0 14px;
 }
 .item__img {
-  list-style-type: none;
-  padding: 0;
-}
-.item__desc {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  border-radius: 10px 10px 0 0;
   width: 100%;
-  padding: 10px 12px;
+}
+.item__status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
 .item__title {
   @include sub-text();
+  padding: 5px 12px;
 }
 .item__subtitle {
   @include help-text();
+  text-transform: capitalize;
+}
+.item__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 0 12px;
+}
+.item__like {
+  background: url(../assets/movies-card_like.svg) center no-repeat;
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+  border: none;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-left: auto;
+  &:hover {
+    transform: scale(1.2);
+  }
+  &_active {
+    background: url(../assets/movies-card_like_active.svg) center no-repeat;
+  }
 }
 </style>
