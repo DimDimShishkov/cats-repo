@@ -22,6 +22,7 @@ import { defineComponent } from "vue";
 // import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import CardItem from "@/components/CardItem.vue";
 import SideBar from "@/components/SideBar.vue";
+import mockData from "@/assets/mockData.json";
 
 declare interface ICharacter {
   gender: string;
@@ -48,13 +49,47 @@ export default defineComponent({
     getCharacters() {
       fetch("https://rickandmortyapi.com/api/character")
         .then((res) => res.json())
-        .then((data) => (this.cards = data.results))
-        .then((data) => console.log(data))
+        .then((data) => {
+          this.cards = data.results;
+          return console.log(data);
+        })
+        // .then((data) => (this.cards = data.results))
+        .catch((err) => console.log(err));
+    },
+    bibaBoba() {
+      let gender = [] as any[];
+      return mockData
+        .map(
+          (item) =>
+            !gender.find((o) => o === item.species) &&
+            (gender = [...gender, item.species])
+        )
+        .filter((item) => item);
+    },
+    bobaBiba() {
+      let a = [] as number[];
+      for (let i = 1; i < 827; i++) {
+        a = [...a, i];
+      }
+      return a;
+    },
+    getCharactersAll(arr: any) {
+      fetch(`https://rickandmortyapi.com/api/character/${arr}`)
+        .then((res) => res.json())
+        .then((data) => {
+          this.cards = data;
+
+          return console.log(data);
+        })
+        // .then((data) => (this.cards = data.results))
         .catch((err) => console.log(err));
     },
   },
   mounted() {
-    this.getCharacters();
+    // this.getCharacters();
+    // this.getCharactersAll(this.bibaBoba());
+    // this.bibaBoba();
+    console.log(this.bibaBoba());
   },
 });
 </script>

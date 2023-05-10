@@ -1,12 +1,29 @@
 <template>
   <div class="sidebar">
-    <AccordionList open-multiple-items>
+    <AccordionList>
       <AccordionItem>
-        <template #summary><p class="sidebar__text">test1</p></template>
-        сюда вставить ссылки
+        <template #summary><p class="sidebar__text">Сharacters</p></template>
+        <AccordionList open-multiple-items>
+          <input type="text" placeholder="put name of character" />
+          <AccordionItem>
+            <template #summary><p class="sidebar__text">status</p></template>
+            <label> <input type="checkbox" />Alive </label>
+            <label> <input type="checkbox" />Dead </label>
+            <label> <input type="checkbox" />unknown </label>
+          </AccordionItem>
+          <AccordionItem>
+            <template #summary><p class="sidebar__text">gender</p></template>
+            Female, Male, Genderless or unknown
+          </AccordionItem>
+          <AccordionItem>
+            <template #summary><p class="sidebar__text">species</p></template>
+            "Human", "Alien", "Humanoid", "unknown", "Poopybutthole",
+            "Mythological Creature", "Animal", "Robot", "Cronenberg", "Disease"
+          </AccordionItem>
+        </AccordionList>
       </AccordionItem>
       <AccordionItem>
-        <template #summary><p class="sidebar__text">фильтры</p></template>
+        <template #summary><p class="sidebar__text">Episodes</p></template>
         Here some text of nested item-2
       </AccordionItem>
     </AccordionList>
